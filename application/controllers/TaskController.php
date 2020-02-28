@@ -7,19 +7,8 @@ use application\lib\Db;
 
 class TaskController extends Controller
 {
-  public function indexAction() {
-    $model = [
-      [
-      'title' => 'Task 1',
-      'description' => 'Task desc 1',
-      'status' => 'Done'
-      ],
-      [
-      'title' => 'Task 2',
-      'description' => 'Task desc 2',
-      'status' => 'In progress'
-      ]
-    ];
+  public function indexAction() {    
+    $model = $this->model->getTasks();
 
     $this->view->render('Список задач', [
       'model' => $model
@@ -27,6 +16,9 @@ class TaskController extends Controller
   }
 
   public function createAction() {
+    if (!empty($_POST)) {
+      $this->view->message(200, 'Задача успешно добавлена');
+    }
     $this->view->render('Добавить задачу');
   }
 

@@ -24,7 +24,6 @@ class Db extends SQLite3
     while ($result = $results->fetchArray(SQLITE3_ASSOC))
       $data[] = $result;
 
-    debug($data);
     return $data;
   }
 }

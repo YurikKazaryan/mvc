@@ -2,8 +2,11 @@
 
 namespace application\models;
 
-class Task
+use application\core\Model;
+
+class Task extends Model
 {
-  public function __construct() {
+  public function getTasks() {
+    $result = $this->db->useQuery('SELECT * FROM tasks');
   }
 }

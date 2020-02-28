@@ -35,4 +35,9 @@ class View
     header('location: ' . $url);
     exit;
   }
+
+  public function message($status, $message)
+  {
+    exit(json_encode(['status' => $status, 'message' => $message]));
+  }
 }
