@@ -11,11 +11,8 @@ $(document).ready(function() {
       processData: false,
       success: function(result) {
         json = $.parseJSON(result);
-        if (json.url) {
-          window.location.href = json.url;
-        } else {
-          alert(`${json.status}: ${json.message}`);
-        }
+        alert(`${json.status}: ${json.message}`);
+        if (json.url) window.location.href = json.url;
       }
     });
   });

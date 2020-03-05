@@ -23,7 +23,19 @@ class Db extends SQLite3
 
     while ($result = $results->fetchArray(SQLITE3_ASSOC))
       $data[] = $result;
-
+      
     return $data;
+  }
+
+  public function useInsert($sql, $params = []) {
+    $statement = $this->prepare($sql);
+    if (!empty($params))
+      foreach ($params as $key => $value)
+        $statement->bindValue(':' . $key, strip_tags($value));
+    
+    if ($statement->execute())
+      return true;
+    
+    return false;
   }
 }

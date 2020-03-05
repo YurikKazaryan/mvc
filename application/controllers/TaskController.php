@@ -17,7 +17,9 @@ class TaskController extends Controller
 
   public function createAction() {
     if (!empty($_POST)) {
-      $this->view->message(200, 'Задача успешно добавлена');
+      if ($this->model->save($_POST)) {
+        $this->view->message(200, 'Задача успешно добавлена!', '/');
+      }
     }
     $this->view->render('Добавить задачу');
   }
