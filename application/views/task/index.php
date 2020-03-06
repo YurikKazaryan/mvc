@@ -18,3 +18,27 @@
     <?php endforeach?>
   <tbody>
 </table>
+<nav aria-label="Page navigation">
+  <ul class="pagination">
+    <li class="page-item <?= $currentPage <= 1 ? 'disabled' : ''?>">
+      <a class="page-link" href="?page=<?=$currentPage - 1?>" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+    <?php for($i = 1; $i <= $totalPages; $i++): ?>
+    <li class="page-item <?= $i == $currentPage ? 'active' : ''?>">
+      <a class="page-link" href="?page=<?=$i?>"><?=$i?>
+        <?php if ($i == $currentPage):?>
+        <span class="sr-only">(current)</span>
+        <?php endif?>
+      </a></li>
+    <?php endfor?>
+    <li class="page-item <?= $currentPage >= $totalPages ? 'disabled' : ''?>">
+      <a class="page-link" href="?page=<?=$currentPage + 1?>" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+    </li>
+  </ul>
+</nav>

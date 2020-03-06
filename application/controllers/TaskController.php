@@ -7,11 +7,33 @@ use application\lib\Db;
 
 class TaskController extends Controller
 {
-  public function indexAction() {    
-    $model = $this->model->getTasks();
+  public function indexAction() {
+    try {
+      $model = $this->model->getTasks();
+      $currentPage = isset($_GET['page']) ? (int) $_GET['page'] : 1;
+      $rpp = 3;
+      $offset = ($currentPage - 1) * $rpp;
+      $totalPages = ceil(count($model) / $rpp);
+
+      if ($currentPage > $totalPages) {
+        $currentPage = $totalPages;
+        $offset = ($currentPage - 1) * $rpp;
+      }
+
+      if ($currentPage <= 0) {
+        $currentPage = 1;
+        $offset = ($currentPage - 1) * $rpp;
+      }
+
+      $model = $this->model->getLimitedTasks($offset, $rpp);
+    } catch (Exception $e) {
+      exit($e->getMessage());
+    }
 
     $this->view->render('Список задач', [
-      'model' => $model
+      'model' => $model,
+      'totalPages' => $totalPages,
+      'currentPage' => $currentPage
     ]);
   }
 
