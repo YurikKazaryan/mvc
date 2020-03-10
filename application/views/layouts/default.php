@@ -3,6 +3,7 @@
 <head>
   <title>Органайзер: <?=$title?></title>
   <link rel="stylesheet" href="/public/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/public/css//fonts/all.min.css" />
 </head>
 <body>
 <div class="container">
@@ -25,5 +26,6 @@
 <script src="https://unpkg.com/@popperjs/core@2.0.6/dist/umd/popper.min.js"></script>
 <script src="/public/js/bootstrap.min.js"></script>
 <script src="/public/js/form.js"></script>
+<script src="/public/js/fonts/all.min.js"></script>
 </body>
 </html>

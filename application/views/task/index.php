@@ -1,10 +1,14 @@
 <table class="table table-striped table-hover" style="margin-top: 15px">
   <thead class="thead-dark">
     <tr>
-      <th>Имя пользователя</th>
-      <th>Email</th>
-      <th>Текст задачи</th>
-      <th>Статус</th>
+      <th style="cursor: pointer">Имя пользователя 
+        <a href ="?<?=$_SERVER['QUERY_STRING']?><?=$_SERVER['QUERY_STRING'] ? '&' : '?'?>sort=username&order=ASC">
+          <i class="fas fa-sort-up"></i>
+        </a>
+      </th>
+      <th style="cursor: pointer">Email</th>
+      <th style="cursor: pointer">Текст задачи</th>
+      <th style="cursor: pointer">Статус</th>
     </tr>
   </thead>
   <tbody>

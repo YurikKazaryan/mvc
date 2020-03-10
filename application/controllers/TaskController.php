@@ -33,7 +33,7 @@ class TaskController extends Controller
     $this->view->render('Список задач', [
       'model' => $model,
       'totalPages' => $totalPages,
-      'currentPage' => $currentPage
+      'currentPage' => $currentPage,
     ]);
   }
 
