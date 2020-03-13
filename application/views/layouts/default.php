@@ -1,3 +1,9 @@
+<?php
+/**
+ * @var $title string
+ * @var $content string
+ */
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,6 +32,7 @@
 <script src="https://unpkg.com/@popperjs/core@2.0.6/dist/umd/popper.min.js"></script>
 <script src="/public/js/bootstrap.min.js"></script>
 <script src="/public/js/form.js"></script>
+<script src="/public/js/custom.js"></script>
 <script src="/public/js/fonts/all.min.js"></script>
 </body>
 </html>

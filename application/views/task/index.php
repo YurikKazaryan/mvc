@@ -1,14 +1,37 @@
+<?php
+/**
+ * @var $model \application\models\Task
+ * @var $currentPage int
+ * @var $totalPages int
+ */
+?>
 <table class="table table-striped table-hover" style="margin-top: 15px">
   <thead class="thead-dark">
     <tr>
-      <th style="cursor: pointer">Имя пользователя 
-        <a href ="?<?=$_SERVER['QUERY_STRING']?><?=$_SERVER['QUERY_STRING'] ? '&' : '?'?>sort=username&order=ASC">
-          <i class="fas fa-sort-up"></i>
-        </a>
+      <th style="cursor: pointer" onclick="Filter(this)" field="username" direction="ASC">Имя пользователя
+        <span style="margin-left: 10px; margin-top: 5px; position: absolute">
+          <i class="fas fa-sort-up" style="position: absolute; display: none"></i>
+          <i class="fas fa-sort-down" style="position: absolute; display: none"></i>
+        </span>
       </th>
-      <th style="cursor: pointer">Email</th>
-      <th style="cursor: pointer">Текст задачи</th>
-      <th style="cursor: pointer">Статус</th>
+      <th style="cursor: pointer" onclick="Filter(this)" field="email" direction="ASC">Email
+        <span style="margin-left: 10px; margin-top: 5px; position: absolute">
+          <i class="fas fa-sort-up" style="position: absolute; display: none"></i>
+          <i class="fas fa-sort-down" style="position: absolute; display: none"></i>
+        </span>
+      </th>
+      <th style="cursor: pointer" onclick="Filter(this)" field="task_text" direction="ASC">Тект задачи
+        <span style="margin-left: 10px; margin-top: 5px; position: absolute">
+          <i class="fas fa-sort-up" style="position: absolute; display: none"></i>
+          <i class="fas fa-sort-down" style="position: absolute; display: none"></i>
+        </span>
+      </th>
+      <th style="cursor: pointer" onclick="Filter(this)" field="status" direction="ASC">Статус
+        <span style="margin-left: 10px; margin-top: 5px; position: absolute">
+          <i class="fas fa-sort-up" style="position: absolute; display: none"></i>
+          <i class="fas fa-sort-down" style="position: absolute; display: none"></i>
+        </span>
+      </th>
     </tr>
   </thead>
   <tbody>
